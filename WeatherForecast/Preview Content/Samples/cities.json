@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Hanoi",
+        "lat": 21.0294498,
+        "lon": 105.8544441,
+        "country": "VN"
+    },
+    {
+        "name": "London",
+        "lat": 51.5073219,
+        "lon": -0.1276474,
+        "country": "GB",
+        "state": "England"
+    },
+    {
+        "name": "New York",
+        "lat": 40.7127281,
+        "lon": -74.0060152,
+        "country": "US",
+        "state": "New York"
+    }
+]

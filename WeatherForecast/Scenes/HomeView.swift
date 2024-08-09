@@ -8,24 +8,34 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Environment(\.isSearching) private var isSearching
     @StateObject private var viewModel = ViewModel()
 
     var body: some View {
         NavigationStack {
+            Content()
+                .navigationTitle("Weather Forecast")
+                .searchable(text: $viewModel.searchText, prompt: "Search for a city")
+                .environmentObject(viewModel)
+        }
+    }
+}
+
+extension HomeView {
+    struct Content: View {
+        @Environment(\.isSearching) private var isSearching
+        @EnvironmentObject private var viewModel: ViewModel
+
+        var body: some View {
             ScrollView {
                 LazyVStack {
-                    ForEach(viewModel.cities) { city in
-                        Text(city.name)
-                    }
-                }
-            }
-            .searchable(text: $viewModel.searchText, prompt: "Search for a city")
-            .navigationTitle("Weather Forecast")
-            .overlay(alignment: .top) {
-                if !viewModel.searchResults.isEmpty {
-                    ForEach(viewModel.searchResults) { city in
-                        Text(city.name)
+                    if isSearching {
+                        ForEach(viewModel.searchResults) { city in
+                            Text(city.name)
+                        }
+                    } else {
+                        ForEach(viewModel.cities) { city in
+                            Text(city.name)
+                        }
                     }
                 }
             }
@@ -34,5 +44,8 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    APIClientPreview.shared.requestPreview = { _ in
+        [City].from(file: "cities")
+    }
+    return HomeView()
 }

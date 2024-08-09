@@ -15,15 +15,17 @@ extension HomeView {
         @Published var cities: [City] = []
 
         private var cancellable = Set<AnyCancellable>()
-        
-        init() {
-            APIClient().request(.geocoding("Ha noi"), for: [City].self)
-                .sink { completion in
-                    print("completion", completion)
-                } receiveValue: { cities in
-                    print("city", cities)
-                }
-                .store(in: &cancellable)
+
+        init(apiClient: APIClientProtocol = DI.resolve()) {
+            $searchText
+                .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
+                .filter { $0.count >= 2 }
+                .removeDuplicates()
+                .map { apiClient.request(.geocoding($0), for: [City].self) }
+                .switchToLatest()
+                .replaceError(with: [City]())
+                .receive(on: DispatchQueue.main)
+                .assign(to: &$searchResults)
         }
     }
 }

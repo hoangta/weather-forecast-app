@@ -18,6 +18,10 @@
 		06A84DCD2C65C7A000F757BA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84DCC2C65C7A000F757BA /* City.swift */; };
 		06A84DD02C65CBEB00F757BA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84DCF2C65CBEB00F757BA /* APIClient.swift */; };
 		06A84DD32C65DBCB00F757BA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84DD22C65DBCB00F757BA /* API.swift */; };
+		06A84DD52C65DCEA00F757BA /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 06A84DD42C65DCEA00F757BA /* cities.json */; };
+		06A84DD82C65E10D00F757BA /* Decodable+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84DD72C65E10D00F757BA /* Decodable+File.swift */; };
+		06A84DDC2C65E14F00F757BA /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84DDB2C65E14F00F757BA /* DI.swift */; };
+		06A84DDF2C65E1FA00F757BA /* APIClientPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84DDE2C65E1FA00F757BA /* APIClientPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		06A84DCF2C65CBEB00F757BA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		06A84DD12C65D5C900F757BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		06A84DD22C65DBCB00F757BA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		06A84DD42C65DCEA00F757BA /* cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		06A84DD72C65E10D00F757BA /* Decodable+File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+File.swift"; sourceTree = "<group>"; };
+		06A84DDB2C65E14F00F757BA /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		06A84DDE2C65E1FA00F757BA /* APIClientPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,8 @@
 		06A84DA22C65B53300F757BA /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				06A84DD92C65E12900F757BA /* Samples */,
+				06A84DD62C65E08B00F757BA /* Extensions */,
 				06A84DA32C65B53300F757BA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -175,10 +185,44 @@
 		06A84DCE2C65CBD400F757BA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				06A84DDB2C65E14F00F757BA /* DI.swift */,
+				06A84DDA2C65E14000F757BA /* APIClient */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		06A84DD62C65E08B00F757BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06A84DD72C65E10D00F757BA /* Decodable+File.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		06A84DD92C65E12900F757BA /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				06A84DD42C65DCEA00F757BA /* cities.json */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		06A84DDA2C65E14000F757BA /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				06A84DDD2C65E1DE00F757BA /* Preview */,
 				06A84DD22C65DBCB00F757BA /* API.swift */,
 				06A84DCF2C65CBEB00F757BA /* APIClient.swift */,
 			);
-			path = Services;
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		06A84DDD2C65E1DE00F757BA /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				06A84DDE2C65E1FA00F757BA /* APIClientPreview.swift */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A84DD52C65DCEA00F757BA /* cities.json in Resources */,
 				06A84DA42C65B53300F757BA /* Preview Assets.xcassets in Resources */,
 				06A84DA12C65B53300F757BA /* Assets.xcassets in Resources */,
 			);
@@ -311,12 +356,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A84DDF2C65E1FA00F757BA /* APIClientPreview.swift in Sources */,
+				06A84DDC2C65E14F00F757BA /* DI.swift in Sources */,
 				06A84D9F2C65B53200F757BA /* HomeView.swift in Sources */,
 				06A84DCA2C65C66100F757BA /* HomeViewModel.swift in Sources */,
 				06A84DCD2C65C7A000F757BA /* City.swift in Sources */,
 				06A84DD02C65CBEB00F757BA /* APIClient.swift in Sources */,
 				06A84DD32C65DBCB00F757BA /* API.swift in Sources */,
 				06A84D9D2C65B53200F757BA /* WeatherForecastApp.swift in Sources */,
+				06A84DD82C65E10D00F757BA /* Decodable+File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +537,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,6 +569,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
