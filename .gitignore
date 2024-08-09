@@ -1,0 +1,8 @@
+xcuserdata/
+project.xcworkspace/
+DerivedData/
+
+build/
+dist/
+.secret-*
+**.sample
