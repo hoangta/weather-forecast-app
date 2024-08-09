@@ -30,18 +30,33 @@ extension HomeView {
             ScrollView {
                 LazyVStack {
                     if isSearching {
-                        ForEach(viewModel.searchResults, content: CityView.init)
+                        searchResults
                     } else {
-                        ForEach(viewModel.cities, content: CityView.init)
+                        favoriteCities
                     }
                 }
-                .padding(.horizontal)
+                .padding()
             }
             .overlay {
                 if !isSearching && viewModel.cities.isEmpty {
                     NoFavoriteCitiesView()
                 }
             }
+        }
+
+        private var searchResults: some View {
+            ForEach(viewModel.searchResults) { city in
+                NavigationLink {
+
+                } label: {
+                    CityResultView(city: city)
+                }
+                .foregroundStyle(.primary)
+            }
+        }
+
+        private var favoriteCities: some View {
+            ForEach(viewModel.cities, content: CityView.init)
         }
     }
 }
