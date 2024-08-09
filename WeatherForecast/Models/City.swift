@@ -6,16 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct City: Decodable {
-    let name: String
-    let lat: Double
-    let lon: Double
-    let country: String
-}
-
-extension City: Identifiable {
-    var id: String {
-        name + country
-    }
+class City: Object, ObjectKeyIdentifiable, Decodable {
+    @Persisted var name: String
+    @Persisted var lat: Double
+    @Persisted var lon: Double
+    @Persisted var country: String
 }

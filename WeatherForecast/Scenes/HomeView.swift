@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct HomeView: View {
     @StateObject private var viewModel = ViewModel()
@@ -49,8 +50,13 @@ extension HomeView {
 }
 
 #Preview {
+    let cities = [City].from(file: "cities")
+    let oneCity = cities[0]
+    try! Realm.inMemory.write {
+        Realm.inMemory.add(cities)
+    }
     APIClientPreview.shared.requestPreview = { _ in
-        [City].from(file: "cities")
+        [oneCity]
     }
     return HomeView()
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		064C88582C66054500367597 /* NoFavoriteCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C88572C66054500367597 /* NoFavoriteCitiesView.swift */; };
+		069F69432C6608E10090C2BD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 069F69422C6608E10090C2BD /* RealmSwift */; };
+		069F69462C6610ED0090C2BD /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F69452C6610ED0090C2BD /* Realm.swift */; };
 		06A84D9D2C65B53200F757BA /* WeatherForecastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84D9C2C65B53200F757BA /* WeatherForecastApp.swift */; };
 		06A84D9F2C65B53200F757BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84D9E2C65B53200F757BA /* HomeView.swift */; };
 		06A84DA12C65B53300F757BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A84DA02C65B53300F757BA /* Assets.xcassets */; };
@@ -44,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		064C88572C66054500367597 /* NoFavoriteCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavoriteCitiesView.swift; sourceTree = "<group>"; };
+		069F69452C6610ED0090C2BD /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		06A84D992C65B53200F757BA /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A84D9C2C65B53200F757BA /* WeatherForecastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastApp.swift; sourceTree = "<group>"; };
 		06A84D9E2C65B53200F757BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069F69432C6608E10090C2BD /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,14 @@
 				064C88572C66054500367597 /* NoFavoriteCitiesView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		069F69442C660F9E0090C2BD /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				069F69452C6610ED0090C2BD /* Realm.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		06A84D902C65B53200F757BA = {
@@ -198,6 +210,7 @@
 			children = (
 				06A84DDB2C65E14F00F757BA /* DI.swift */,
 				06A84DDA2C65E14000F757BA /* APIClient */,
+				069F69442C660F9E0090C2BD /* Realm */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -252,6 +265,9 @@
 			dependencies = (
 			);
 			name = WeatherForecast;
+			packageProductDependencies = (
+				069F69422C6608E10090C2BD /* RealmSwift */,
+			);
 			productName = WeatherForecast;
 			productReference = 06A84D992C65B53200F757BA /* WeatherForecast.app */;
 			productType = "com.apple.product-type.application";
@@ -324,6 +340,9 @@
 				Base,
 			);
 			mainGroup = 06A84D902C65B53200F757BA;
+			packageReferences = (
+				069F69412C6608E10090C2BD /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 06A84D9A2C65B53200F757BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,6 +389,7 @@
 				06A84DDF2C65E1FA00F757BA /* APIClientPreview.swift in Sources */,
 				06A84DDC2C65E14F00F757BA /* DI.swift in Sources */,
 				06A84D9F2C65B53200F757BA /* HomeView.swift in Sources */,
+				069F69462C6610ED0090C2BD /* Realm.swift in Sources */,
 				06A84DCA2C65C66100F757BA /* HomeViewModel.swift in Sources */,
 				06A84DCD2C65C7A000F757BA /* City.swift in Sources */,
 				06A84DD02C65CBEB00F757BA /* APIClient.swift in Sources */,
@@ -708,6 +728,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		069F69412C6608E10090C2BD /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 10.52.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		069F69422C6608E10090C2BD /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 069F69412C6608E10090C2BD /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06A84D912C65B53200F757BA /* Project object */;
 }
