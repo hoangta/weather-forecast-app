@@ -39,6 +39,11 @@ extension HomeView {
                     }
                 }
             }
+            .overlay {
+                if !isSearching && viewModel.cities.isEmpty {
+                    NoFavoriteCitiesView()
+                }
+            }
         }
     }
 }
