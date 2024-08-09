@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct City {
+struct City: Decodable {
     let name: String
     let lat: Double
     let lon: Double
