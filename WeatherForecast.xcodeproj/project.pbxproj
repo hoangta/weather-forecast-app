@@ -10,6 +10,7 @@
 		064C88582C66054500367597 /* NoFavoriteCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C88572C66054500367597 /* NoFavoriteCitiesView.swift */; };
 		069F69432C6608E10090C2BD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 069F69422C6608E10090C2BD /* RealmSwift */; };
 		069F69462C6610ED0090C2BD /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F69452C6610ED0090C2BD /* Realm.swift */; };
+		069F69482C6616660090C2BD /* CityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F69472C6616660090C2BD /* CityView.swift */; };
 		06A84D9D2C65B53200F757BA /* WeatherForecastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84D9C2C65B53200F757BA /* WeatherForecastApp.swift */; };
 		06A84D9F2C65B53200F757BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A84D9E2C65B53200F757BA /* HomeView.swift */; };
 		06A84DA12C65B53300F757BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A84DA02C65B53300F757BA /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		064C88572C66054500367597 /* NoFavoriteCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavoriteCitiesView.swift; sourceTree = "<group>"; };
 		069F69452C6610ED0090C2BD /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		069F69472C6616660090C2BD /* CityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
 		06A84D992C65B53200F757BA /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A84D9C2C65B53200F757BA /* WeatherForecastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastApp.swift; sourceTree = "<group>"; };
 		06A84D9E2C65B53200F757BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				064C88572C66054500367597 /* NoFavoriteCitiesView.swift */,
+				069F69472C6616660090C2BD /* CityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A84DDF2C65E1FA00F757BA /* APIClientPreview.swift in Sources */,
+				069F69482C6616660090C2BD /* CityView.swift in Sources */,
 				06A84DDC2C65E14F00F757BA /* DI.swift in Sources */,
 				06A84D9F2C65B53200F757BA /* HomeView.swift in Sources */,
 				069F69462C6610ED0090C2BD /* Realm.swift in Sources */,

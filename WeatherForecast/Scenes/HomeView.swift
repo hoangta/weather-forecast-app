@@ -30,15 +30,12 @@ extension HomeView {
             ScrollView {
                 LazyVStack {
                     if isSearching {
-                        ForEach(viewModel.searchResults) { city in
-                            Text(city.name)
-                        }
+                        ForEach(viewModel.searchResults, content: CityView.init)
                     } else {
-                        ForEach(viewModel.cities) { city in
-                            Text(city.name)
-                        }
+                        ForEach(viewModel.cities, content: CityView.init)
                     }
                 }
+                .padding(.horizontal)
             }
             .overlay {
                 if !isSearching && viewModel.cities.isEmpty {
@@ -51,12 +48,11 @@ extension HomeView {
 
 #Preview {
     let cities = [City].from(file: "cities")
-    let oneCity = cities[0]
     try! Realm.inMemory.write {
         Realm.inMemory.add(cities)
     }
     APIClientPreview.shared.requestPreview = { _ in
-        [oneCity]
+        [cities[0], cities[1]]
     }
     return HomeView()
 }
