@@ -21,6 +21,7 @@
 		0613DEB22C6790C600BEF80D /* Publisher+Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613DEB12C6790C600BEF80D /* Publisher+Debounce.swift */; };
 		0613DEB52C67A83800BEF80D /* Debounce+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613DEB42C67A83800BEF80D /* Debounce+Mock.swift */; };
 		064C88582C66054500367597 /* NoFavoriteCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C88572C66054500367597 /* NoFavoriteCitiesView.swift */; };
+		065D34AB2C67D8CE005A70EC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 065D34AA2C67D8CE005A70EC /* README.md */; };
 		069F69432C6608E10090C2BD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 069F69422C6608E10090C2BD /* RealmSwift */; };
 		069F69462C6610ED0090C2BD /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F69452C6610ED0090C2BD /* Realm.swift */; };
 		069F69482C6616660090C2BD /* CityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F69472C6616660090C2BD /* CityView.swift */; };
@@ -86,6 +87,7 @@
 		0613DEB32C67993E00BEF80D /* WeatherForecast.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherForecast.xctestplan; sourceTree = "<group>"; };
 		0613DEB42C67A83800BEF80D /* Debounce+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debounce+Mock.swift"; sourceTree = "<group>"; };
 		064C88572C66054500367597 /* NoFavoriteCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavoriteCitiesView.swift; sourceTree = "<group>"; };
+		065D34AA2C67D8CE005A70EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		069F69452C6610ED0090C2BD /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		069F69472C6616660090C2BD /* CityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
 		069F69492C6616A20090C2BD /* CityResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityResultView.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		06A84D902C65B53200F757BA = {
 			isa = PBXGroup;
 			children = (
+				065D34AA2C67D8CE005A70EC /* README.md */,
 				06A84D9B2C65B53200F757BA /* WeatherForecast */,
 				06A84DAC2C65B53300F757BA /* WeatherForecastTests */,
 				06A84DB62C65B53300F757BA /* WeatherForecastUITests */,
@@ -485,6 +488,7 @@
 			files = (
 				06A84DD52C65DCEA00F757BA /* cities.json in Resources */,
 				06A84DA42C65B53300F757BA /* Preview Assets.xcassets in Resources */,
+				065D34AB2C67D8CE005A70EC /* README.md in Resources */,
 				06A84DA12C65B53300F757BA /* Assets.xcassets in Resources */,
 				0613DE9B2C67525D00BEF80D /* forecasts.json in Resources */,
 			);
@@ -761,7 +765,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hoangta.WeatherForecastTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -780,7 +784,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hoangta.WeatherForecastTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -798,6 +802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hoangta.WeatherForecastUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -815,6 +820,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hoangta.WeatherForecastUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
