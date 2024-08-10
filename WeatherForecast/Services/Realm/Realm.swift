@@ -17,9 +17,9 @@ extension DI {
 extension Realm {
     static var `default`: Realm { try! Realm() }
 
-    static let inMemory: Realm = {
+    static var inMemory: Realm {
         var config = Realm.Configuration()
         config.inMemoryIdentifier = "preview"
         return try! Realm(configuration: config)
-    }()
+    }
 }

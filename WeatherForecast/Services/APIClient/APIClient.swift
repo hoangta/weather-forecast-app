@@ -31,6 +31,7 @@ final class APIClient: APIClientProtocol {
             .dataTaskPublisher(for: api.url)
             .map(\.data)
             .decode(type: T.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }

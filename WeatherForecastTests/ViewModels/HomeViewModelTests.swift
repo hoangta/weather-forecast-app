@@ -27,13 +27,14 @@ final class HomeViewModelTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        realm = nil
         viewModel = nil
         cancellables = nil
         try super.tearDownWithError()
     }
 
     func test_initialFavoriteCityList_shouldBeEmpty() throws {
-        XCTAssert(viewModel.cities.isEmpty)
+        XCTAssert(viewModel.cities.isEmpty, "City count: \(viewModel.cities.count)")
     }
 
     func test_cityList_whenAppear_shouldLoadFavoriteCities() throws {

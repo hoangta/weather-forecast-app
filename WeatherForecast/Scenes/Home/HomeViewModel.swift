@@ -17,12 +17,12 @@ extension HomeView {
 
         private let apiClient: APIClientProtocol
         private let realm: Realm
-        private var cancellable = Set<AnyCancellable>()
+        private var cancellables = Set<AnyCancellable>()
 
         init<S: Scheduler>(
             apiClient: APIClientProtocol = DI.resolve(),
             realm: Realm = DI.resolve(),
-            debounce: Debounce<S> = .global
+            debounce: Debounce<S> = .default
         ) {
             self.apiClient = apiClient
             self.realm = realm
@@ -40,15 +40,15 @@ extension HomeView {
             // .map + .switchToLatest = .flatMapLatest in rxswift, i.e we only want the latest result
                 .map { [unowned self] in mapTextToCitiesPublisher(text: $0) }
                 .switchToLatest()
-            // Switch back to main thread for UI updates
-                .receive(on: DispatchQueue.main)
+            // another mapping to cities from raw values
                 .map { [unowned self] in mapRawsToCities(raws: $0) }
                 .assign(to: &$searchResults)
         }
     }
 }
 
-extension HomeView.ViewModel {
+// MARK: - Helpers
+private extension HomeView.ViewModel {
     func mapTextToCitiesPublisher(text: String) -> AnyPublisher<[City.Raw], Never> {
         // Only cater for search text with 2 or more character, otherwise return empty
         if text.count < 2 {

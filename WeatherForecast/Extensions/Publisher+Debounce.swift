@@ -13,9 +13,9 @@ struct Debounce<S: Scheduler> {
     let scheduler: S
 }
 
-extension Debounce where S == DispatchQueue {
-    static var global: Debounce<S> {
-        Debounce(dueTime: 0.5, scheduler: DispatchQueue.global())
+extension Debounce where S == RunLoop {
+    static var `default`: Debounce<S> {
+        Debounce(dueTime: 0.5, scheduler: RunLoop.main)
     }
 }
 

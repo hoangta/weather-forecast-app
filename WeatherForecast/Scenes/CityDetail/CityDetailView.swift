@@ -16,6 +16,12 @@ struct CityDetailView: View {
     var body: some View {
         VStack {
             temperatureListView
+                .frame(minHeight: 90)
+                .overlay {
+                    if viewModel.isFetching {
+                        ProgressView()
+                    }
+                }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -24,6 +30,9 @@ struct CityDetailView: View {
         .toolbar {
             backButton
             favoriteButton
+        }
+        .task {
+            viewModel.fetchForecasts(for: city)
         }
     }
 }
@@ -54,7 +63,9 @@ private extension CityDetailView {
                         Image(systemName: icon)
                             .frame(height: 30)
                     }
-                    Text(forecast.temperature.current.formatted(style: .temperature))
+                    if let temperature = forecast.temperature?.current {
+                        Text(temperature.formatted(style: .temperature))
+                    }
                 }
                 .frame(maxWidth: .infinity)
             }
@@ -65,6 +76,13 @@ private extension CityDetailView {
 
 #Preview("Plain") {
     let city = try! [City.Raw].from(file: "cities").map(City.init).first!
+    try! Realm.inMemory.write {
+        Realm.inMemory.add(city)
+    }
+    let forecasts = try! ForecastResponse.from(file: "forecasts")
+    APIClientPreview.shared.requestPreview = { _ in
+        forecasts
+    }
     return CityDetailView(city: city)
 }
 
@@ -83,5 +101,12 @@ private extension CityDetailView {
     }
 
     let city = try! [City.Raw].from(file: "cities").map(City.init).first!
+    try! Realm.inMemory.write {
+        Realm.inMemory.add(city)
+    }
+    let forecasts = try! ForecastResponse.from(file: "forecasts")
+    APIClientPreview.shared.requestPreview = { _ in
+        forecasts
+    }
     return Preview(city: city)
 }

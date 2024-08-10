@@ -15,6 +15,7 @@ class City: Object, ObjectKeyIdentifiable {
     @Persisted var lon: Double
     @Persisted var country: String
     @Persisted var isFavorite: Bool
+    @Persisted var forecasts: List<Forecast>
 
     convenience init(raw: City.Raw) {
         self.init()
@@ -24,6 +25,7 @@ class City: Object, ObjectKeyIdentifiable {
         self.lon = raw.lon
         self.country = raw.country
         self.isFavorite = false
+        self.forecasts = .init()
     }
 }
 
