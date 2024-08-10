@@ -19,6 +19,7 @@
 		0613DEAE2C67845B00BEF80D /* URLSession+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613DEAD2C67845B00BEF80D /* URLSession+Mock.swift */; };
 		0613DEB02C678F2200BEF80D /* Data+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613DEAF2C678F2200BEF80D /* Data+File.swift */; };
 		0613DEB22C6790C600BEF80D /* Publisher+Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613DEB12C6790C600BEF80D /* Publisher+Debounce.swift */; };
+		0613DEB52C67A83800BEF80D /* Debounce+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613DEB42C67A83800BEF80D /* Debounce+Mock.swift */; };
 		064C88582C66054500367597 /* NoFavoriteCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C88572C66054500367597 /* NoFavoriteCitiesView.swift */; };
 		069F69432C6608E10090C2BD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 069F69422C6608E10090C2BD /* RealmSwift */; };
 		069F69462C6610ED0090C2BD /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F69452C6610ED0090C2BD /* Realm.swift */; };
@@ -82,6 +83,8 @@
 		0613DEAD2C67845B00BEF80D /* URLSession+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Mock.swift"; sourceTree = "<group>"; };
 		0613DEAF2C678F2200BEF80D /* Data+File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+File.swift"; sourceTree = "<group>"; };
 		0613DEB12C6790C600BEF80D /* Publisher+Debounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Debounce.swift"; sourceTree = "<group>"; };
+		0613DEB32C67993E00BEF80D /* WeatherForecast.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherForecast.xctestplan; sourceTree = "<group>"; };
+		0613DEB42C67A83800BEF80D /* Debounce+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debounce+Mock.swift"; sourceTree = "<group>"; };
 		064C88572C66054500367597 /* NoFavoriteCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavoriteCitiesView.swift; sourceTree = "<group>"; };
 		069F69452C6610ED0090C2BD /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		069F69472C6616660090C2BD /* CityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
@@ -178,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0613DEAD2C67845B00BEF80D /* URLSession+Mock.swift */,
+				0613DEB42C67A83800BEF80D /* Debounce+Mock.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +273,7 @@
 		06A84DAC2C65B53300F757BA /* WeatherForecastTests */ = {
 			isa = PBXGroup;
 			children = (
+				0613DEB32C67993E00BEF80D /* WeatherForecast.xctestplan */,
 				0613DEA92C6783B000BEF80D /* ViewModels */,
 				0613DEA82C6783AA00BEF80D /* Services */,
 				0613DEAC2C67844700BEF80D /* Extensions */,
@@ -533,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0613DEB52C67A83800BEF80D /* Debounce+Mock.swift in Sources */,
 				0613DEAB2C6783CE00BEF80D /* APIClientTests.swift in Sources */,
 				0613DEA22C67788F00BEF80D /* HomeViewModelTests.swift in Sources */,
 				0613DEAE2C67845B00BEF80D /* URLSession+Mock.swift in Sources */,

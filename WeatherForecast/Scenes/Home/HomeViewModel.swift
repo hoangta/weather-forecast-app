@@ -17,15 +17,16 @@ extension HomeView {
 
         private var cancellable = Set<AnyCancellable>()
 
-        init(
+        init<S: Scheduler>(
             apiClient: APIClientProtocol = DI.resolve(),
-            realm: Realm = DI.resolve()
+            realm: Realm = DI.resolve(),
+            debounce: Debounce<S> = .global
         ) {
             cities = realm.objects(City.self)
 
             $searchText
             // Reduce network calls, also switch to background thread
-                .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
+                .debounce(for: debounce.dueTime, scheduler: debounce.scheduler)
             // There is an issue when binding searchText that cause every change emit 2 times
             // This also happen when binding via TextField
             // https://forums.swift.org/t/why-published-var-didset-is-called-extra-time-when-its-referenced-by-textfield-binding/52940/10

@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "266C2632-66CD-4312-83C1-9FCC1F09F6B7",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:WeatherForecast.xcodeproj",
+      "identifier" : "06A84D982C65B53200F757BA",
+      "name" : "WeatherForecast"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:WeatherForecast.xcodeproj",
+        "identifier" : "06A84DA82C65B53300F757BA",
+        "name" : "WeatherForecastTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -17,7 +17,8 @@ final class HomeViewModelTests: XCTestCase {
         try super.setUpWithError()
         viewModel = .init(
             apiClient: APIClient(urlSession: URLSession.mock),
-            realm: .inMemory
+            realm: .inMemory,
+            debounce: .immediate
         )
         cancellables = Set<AnyCancellable>()
     }
@@ -33,15 +34,27 @@ final class HomeViewModelTests: XCTestCase {
     }
 
     func test_cityResultList_whenSearchWithOneOrLessCharacter_shouldBeEmpty() throws {
-//        let expectation = expectation(description: "City results should be empty" )
+        // Given
+        let expectation = expectation(description: "City results should be empty" )
+
+        // When
         viewModel.searchText = "A"
-        XCTAssert(viewModel.cities.isEmpty)
-//        wait(for: [expectation], timeout: 0.1)
+
+        // Then
+        viewModel
+            .$searchResults
+            .sink(receiveValue: { cities in
+                XCTAssert(cities.isEmpty, "City count: \(cities.count)")
+                expectation.fulfill()
+            })
+            .store(in: &cancellables)
+
+        wait(for: [expectation], timeout: 0.1)
     }
 
     func test_cityResultList_whenSearchWithTwoOrMoreCharacter_shouldNotBeEmpty() throws {
         // Given
-        let expectation = expectation(description: "City results should be empty" )
+        let expectation = expectation(description: "City results should not be empty" )
         let data = try Data(file: "cities")
         URLProtocolMock.requestData = { _ in data }
 
@@ -51,7 +64,7 @@ final class HomeViewModelTests: XCTestCase {
         // Then
         viewModel
             .$searchResults
-            .dropFirst()
+            .filter { !$0.isEmpty }
             .sink(receiveValue: { cities in
                 XCTAssert(!cities.isEmpty, "City count: \(cities.count)")
                 expectation.fulfill()
