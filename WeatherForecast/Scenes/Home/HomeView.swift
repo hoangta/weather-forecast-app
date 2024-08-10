@@ -69,7 +69,7 @@ extension HomeView {
 }
 
 #Preview {
-    let cities = [City].from(file: "cities")
+    let cities = try! [City].from(file: "cities")
     try! Realm.inMemory.write {
         Realm.inMemory.add(cities[0...2])
     }

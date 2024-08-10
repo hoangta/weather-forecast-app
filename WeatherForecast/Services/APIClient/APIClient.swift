@@ -20,9 +20,14 @@ protocol APIClientProtocol {
 
 final class APIClient: APIClientProtocol {
     static let shared = APIClient()
+    private let urlSession: URLSession
+
+    init (urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
 
     func request<T: Decodable>(_ api: API, for type: T.Type) -> AnyPublisher<T, Error> {
-        URLSession.shared
+        urlSession
             .dataTaskPublisher(for: api.url)
             .map(\.data)
             .decode(type: T.self, decoder: JSONDecoder())

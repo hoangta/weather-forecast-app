@@ -15,15 +15,6 @@ struct CityDetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text(city.name)
-                    .font(.headline)
-                Spacer()
-                Text(city.country)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-            .padding()
             temperatureListView
             Spacer()
         }
@@ -72,16 +63,8 @@ private extension CityDetailView {
     }
 }
 
-extension Array where Element == GridItem {
-    static let temperatureList: [GridItem] = [
-        .init(.fixed(30)),
-        .init(.fixed(30)),
-        .init(.fixed(30))
-    ]
-}
-
 #Preview("Plain") {
-    let city = [City].from(file: "cities").first!
+    let city = try! [City].from(file: "cities").first!
     return CityDetailView(city: city)
 }
 
@@ -99,6 +82,6 @@ extension Array where Element == GridItem {
         }
     }
 
-    let city = [City].from(file: "cities").first!
+    let city = try! [City].from(file: "cities").first!
     return Preview(city: city)
 }

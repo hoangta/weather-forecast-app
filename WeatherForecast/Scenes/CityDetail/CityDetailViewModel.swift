@@ -15,7 +15,7 @@ extension CityDetailView {
         init(
             apiClient: APIClientProtocol = DI.resolve()
         ) {
-            self.forecasts = ForecastResponse.from(file: "forecasts").values
+            self.forecasts = try! ForecastResponse.from(file: "forecasts").values
         }
     }
 }
