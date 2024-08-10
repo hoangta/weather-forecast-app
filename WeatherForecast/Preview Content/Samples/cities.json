@@ -18,5 +18,17 @@
         "lon": -74.0060152,
         "country": "US",
         "state": "New York"
+    },
+    {
+        "name": "Ho Chi Minh",
+        "lat": 10.823,
+        "lon": 106.6297,
+        "country": "VN",
+    },
+    {
+        "name": "Da Nang",
+        "lat": 16.0544,
+        "lon": 108.2022,
+        "country": "VN",
     }
 ]

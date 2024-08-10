@@ -17,7 +17,9 @@ struct HomeView: View {
                 .navigationTitle("Weather Forecast")
                 .searchable(text: $viewModel.searchText, prompt: "Search for a city")
                 .environmentObject(viewModel)
+
         }
+        .foregroundStyle(.primary)
         .onAppear {
             print(Date(timeIntervalSince1970: 1723215600).formatted())
         }
@@ -50,16 +52,21 @@ extension HomeView {
         private var searchResults: some View {
             ForEach(viewModel.searchResults) { city in
                 NavigationLink {
-
+                    CityDetailView(city: city)
                 } label: {
                     CityResultView(city: city)
                 }
-                .foregroundStyle(.primary)
             }
         }
 
         private var favoriteCities: some View {
-            ForEach(viewModel.cities, content: CityView.init)
+            ForEach(viewModel.cities) { city in
+                NavigationLink {
+                    CityDetailView(city: city)
+                } label: {
+                    CityView(city: city)
+                }
+            }
         }
     }
 }
@@ -67,10 +74,10 @@ extension HomeView {
 #Preview {
     let cities = [City].from(file: "cities")
     try! Realm.inMemory.write {
-        Realm.inMemory.add(cities)
+        Realm.inMemory.add(cities[0...2])
     }
     APIClientPreview.shared.requestPreview = { _ in
-        [cities[0], cities[1]]
+        [cities[3], cities[4]]
     }
     return HomeView()
 }
