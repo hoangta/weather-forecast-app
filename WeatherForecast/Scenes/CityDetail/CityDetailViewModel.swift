@@ -10,9 +10,12 @@ import RealmSwift
 
 extension CityDetailView {
     final class ViewModel: ObservableObject {
+        @Published var forecasts: [Forecast]
+
         init(
             apiClient: APIClientProtocol = DI.resolve()
         ) {
+            self.forecasts = ForecastResponse.from(file: "forecasts").values
         }
     }
 }

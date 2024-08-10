@@ -24,8 +24,7 @@ struct CityDetailView: View {
                     .foregroundStyle(.secondary)
             }
             .padding()
-            .background(Color.white)
-            .clipShape(.rect(cornerRadius: 8))
+            temperatureListView
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -54,6 +53,31 @@ private extension CityDetailView {
             FavoriteButton(isFavorite: $city.isFavorite)
         }
     }
+
+    var temperatureListView: some View {
+        HStack {
+            ForEach(viewModel.forecasts, id: \.time) { forecast in
+                VStack {
+                    Text(forecast.time.formatted(Date.FormatStyle().hour()))
+                    if let icon = forecast.weather?.icon {
+                        Image(systemName: icon)
+                            .frame(height: 30)
+                    }
+                    Text(forecast.temperature.current.formatted(style: .temperature))
+                }
+                .frame(maxWidth: .infinity)
+            }
+        }
+        .padding()
+    }
+}
+
+extension Array where Element == GridItem {
+    static let temperatureList: [GridItem] = [
+        .init(.fixed(30)),
+        .init(.fixed(30)),
+        .init(.fixed(30))
+    ]
 }
 
 #Preview("Plain") {
