@@ -11,13 +11,13 @@ struct CityView: View {
     let city: City
 
     var body: some View {
-        HStack {
-            Text(city.name)
+        HStack(alignment: .bottom, spacing: 0) {
+            Text("\(city.name) ")
                 .font(.headline)
-            Spacer()
             Text(city.country)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
+            Spacer()
         }
         .frame(maxWidth: .infinity)
         .padding()

@@ -64,7 +64,7 @@ private extension CityDetailView {
 }
 
 #Preview("Plain") {
-    let city = try! [City].from(file: "cities").first!
+    let city = try! [City.Raw].from(file: "cities").map(City.init).first!
     return CityDetailView(city: city)
 }
 
@@ -82,6 +82,6 @@ private extension CityDetailView {
         }
     }
 
-    let city = try! [City].from(file: "cities").first!
+    let city = try! [City.Raw].from(file: "cities").map(City.init).first!
     return Preview(city: city)
 }

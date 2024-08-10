@@ -7,17 +7,20 @@
 
 import XCTest
 import Combine
+import RealmSwift
 @testable import WeatherForecast
 
 final class HomeViewModelTests: XCTestCase {
     private var viewModel: HomeView.ViewModel!
+    private var realm: Realm!
     private var cancellables: Set<AnyCancellable>!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
+        realm = .inMemory
         viewModel = .init(
             apiClient: APIClient(urlSession: URLSession.mock),
-            realm: .inMemory,
+            realm: realm,
             debounce: .immediate
         )
         cancellables = Set<AnyCancellable>()
@@ -31,6 +34,23 @@ final class HomeViewModelTests: XCTestCase {
 
     func test_initialFavoriteCityList_shouldBeEmpty() throws {
         XCTAssert(viewModel.cities.isEmpty)
+    }
+
+    func test_cityList_whenAppear_shouldLoadFavoriteCities() throws {
+        // Given
+        let cities = try! [City.Raw].from(file: "cities").map(City.init)
+        for city in cities {
+            city.isFavorite = true
+        }
+        try realm.write {
+            realm.add(cities[0...2])
+        }
+
+        // Then
+        XCTAssert(!viewModel.cities.isEmpty)
+        for city in viewModel.cities {
+            XCTAssert(city.isFavorite)
+        }
     }
 
     func test_cityResultList_whenSearchWithOneOrLessCharacter_shouldBeEmpty() throws {

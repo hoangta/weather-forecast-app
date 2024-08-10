@@ -69,12 +69,16 @@ extension HomeView {
 }
 
 #Preview {
-    let cities = try! [City].from(file: "cities")
+    let raws = try! [City.Raw].from(file: "cities")
+    let cities = raws.map(City.init)
+    for city in cities {
+        city.isFavorite = true
+    }
     try! Realm.inMemory.write {
         Realm.inMemory.add(cities[0...2])
     }
     APIClientPreview.shared.requestPreview = { _ in
-        [cities[3], cities[4]]
+        [raws[3], raws[4]]
     }
     return HomeView()
 }

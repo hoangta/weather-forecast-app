@@ -34,7 +34,7 @@ final class APIClientTests: XCTestCase {
         URLProtocolMock.requestData = { _ in data }
 
         // Then
-        apiClient.request(.geocoding("a city"), for: [City].self)
+        apiClient.request(.geocoding("a city"), for: [City.Raw].self)
             .sink(receiveCompletion: { _ in
                 expectation.fulfill()
             }, receiveValue: { cities in
