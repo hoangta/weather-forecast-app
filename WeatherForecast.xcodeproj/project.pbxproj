@@ -116,6 +116,23 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		069F694B2C6625DF0090C2BD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				064C88562C66053300367597 /* Views */,
+				06A84D9E2C65B53200F757BA /* HomeView.swift */,
+				06A84DC92C65C66100F757BA /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		069F694C2C6625ED0090C2BD /* City */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
 		06A84D902C65B53200F757BA = {
 			isa = PBXGroup;
 			children = (
@@ -188,9 +205,8 @@
 		06A84DC72C65B5F400F757BA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				064C88562C66053300367597 /* Views */,
-				06A84D9E2C65B53200F757BA /* HomeView.swift */,
-				06A84DC92C65C66100F757BA /* HomeViewModel.swift */,
+				069F694C2C6625ED0090C2BD /* City */,
+				069F694B2C6625DF0090C2BD /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

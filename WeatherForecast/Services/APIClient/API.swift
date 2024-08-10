@@ -29,8 +29,10 @@ extension API {
     }
 
     private var defaultQueries: [URLQueryItem] {
-        [URLQueryItem(name: "limit", value: "3"),
-         URLQueryItem(name: "appid", value: .openWeatherAppId)]
+        [
+            URLQueryItem(name: "limit", value: "3"),
+            URLQueryItem(name: "appid", value: .openWeatherAppId)
+        ]
     }
 
     var queries: [URLQueryItem] {

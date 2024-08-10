@@ -18,6 +18,9 @@ struct HomeView: View {
                 .searchable(text: $viewModel.searchText, prompt: "Search for a city")
                 .environmentObject(viewModel)
         }
+        .onAppear {
+            print(Date(timeIntervalSince1970: 1723198638))
+        }
     }
 }
 
