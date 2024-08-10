@@ -20,9 +20,6 @@ struct HomeView: View {
 
         }
         .foregroundStyle(.primary)
-        .onAppear {
-            print(Date(timeIntervalSince1970: 1723215600).formatted())
-        }
     }
 }
 

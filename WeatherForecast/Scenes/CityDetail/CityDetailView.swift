@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct CityDetailView: View {
     @Environment(\.dismiss) private var dismiss
-    let city: City
-
+    @StateObject private var viewModel = ViewModel()
+    @ObservedRealmObject var city: City
+    
     var body: some View {
         VStack {
             HStack {
@@ -29,7 +31,10 @@ struct CityDetailView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationTitle(city.displayName)
         .navigationBarBackButtonHidden(true)
-        .toolbar { backButton }
+        .toolbar {
+            backButton
+            favoriteButton
+        }
     }
 }
 
@@ -38,8 +43,15 @@ private extension CityDetailView {
     var backButton: some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
             Button(action: { dismiss() }) {
-                Image(systemName: "chevron.left")
+                Image(systemName: "arrow.left")
+                    .bold()
             }
+        }
+    }
+
+    var favoriteButton: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            FavoriteButton(isFavorite: $city.isFavorite)
         }
     }
 }
