@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0613DE942C6739F700BEF80D /* CityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613DE932C6739F700BEF80D /* CityDetailView.swift */; };
 		064C88582C66054500367597 /* NoFavoriteCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C88572C66054500367597 /* NoFavoriteCitiesView.swift */; };
 		069F69432C6608E10090C2BD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 069F69422C6608E10090C2BD /* RealmSwift */; };
 		069F69462C6610ED0090C2BD /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F69452C6610ED0090C2BD /* Realm.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0613DE932C6739F700BEF80D /* CityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailView.swift; sourceTree = "<group>"; };
 		064C88572C66054500367597 /* NoFavoriteCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavoriteCitiesView.swift; sourceTree = "<group>"; };
 		069F69452C6610ED0090C2BD /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		069F69472C6616660090C2BD /* CityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
@@ -126,11 +128,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		069F694C2C6625ED0090C2BD /* City */ = {
+		069F694C2C6625ED0090C2BD /* CityDetail */ = {
 			isa = PBXGroup;
 			children = (
+				0613DE932C6739F700BEF80D /* CityDetailView.swift */,
 			);
-			path = City;
+			path = CityDetail;
 			sourceTree = "<group>";
 		};
 		06A84D902C65B53200F757BA = {
@@ -205,8 +208,8 @@
 		06A84DC72C65B5F400F757BA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				069F694C2C6625ED0090C2BD /* City */,
 				069F694B2C6625DF0090C2BD /* Home */,
+				069F694C2C6625ED0090C2BD /* CityDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0613DE942C6739F700BEF80D /* CityDetailView.swift in Sources */,
 				06A84DDF2C65E1FA00F757BA /* APIClientPreview.swift in Sources */,
 				069F69482C6616660090C2BD /* CityView.swift in Sources */,
 				06A84DDC2C65E14F00F757BA /* DI.swift in Sources */,

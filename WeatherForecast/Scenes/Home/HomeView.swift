@@ -19,7 +19,7 @@ struct HomeView: View {
                 .environmentObject(viewModel)
         }
         .onAppear {
-            print(Date(timeIntervalSince1970: 1723198638))
+            print(Date(timeIntervalSince1970: 1723215600).formatted())
         }
     }
 }

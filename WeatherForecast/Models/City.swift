@@ -14,3 +14,9 @@ class City: Object, ObjectKeyIdentifiable, Decodable {
     @Persisted var lon: Double
     @Persisted var country: String
 }
+
+extension City {
+    var displayName: String {
+        "\(name), \(country)"
+    }
+}
